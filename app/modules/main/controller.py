@@ -9,8 +9,8 @@ class MainController:
         new_sensor_value = Sensor(ph_value = ph_val, turbidity_value = turbidity_val, temperature_value = temperature_val)
 
         # Adding object to database and commit the change
-        # db.session.add(new_sensor_value)
-        # db.session.commit()
+        db.session.add(new_sensor_value)
+        db.session.commit()
 
         # Result to show
         result = {'message':'Sensor value has been added to Database',
