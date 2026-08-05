@@ -4,3 +4,9 @@ python-dotenv
 pytest
 gunicorn
 flasgger
+
+# Machine learning
+scikit-learn==1.8.0
+numpy==2.4.4
+joblib
+pandas

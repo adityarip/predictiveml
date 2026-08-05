@@ -14,3 +14,4 @@ class Sensor(db.Model):
     ph_value: Mapped[float] = mapped_column(nullable=False)
     turbidity_value: Mapped[float] = mapped_column(nullable=False)
     temperature_value: Mapped[float] = mapped_column(nullable=False)
+    predicted_quality: Mapped[str] = mapped_column(nullable=True)
