@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kualitas Air Akuarium</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="head">
+    <h1>Dashboard Kualitas Air Akuarium</h1>
+    <span class="status" id="status">Memuat…</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h2>pH</h2>
+      <div class="value" id="val-ph">&ndash;</div>
+    </div>
+    <div class="card">
+      <h2>Temperatur</h2>
+      <div class="value" id="val-temp">&ndash;</div>
+    </div>
+    <div class="card">
+      <h2>Kekeruhan</h2>
+      <div class="value" id="val-turb">&ndash;</div>
+    </div>
+    <div class="card">
+      <h2>Prediksi Kualitas</h2>
+      <div id="val-qual">&ndash;</div>
+      <div class="time" id="val-time"></div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="card">
+      <div class="chart-head">
+        <h2>Tren Parameter Sensor</h2>
+        <select id="range" aria-label="Rentang waktu">
+          <option value="6">6 jam</option>
+          <option value="24" selected>24 jam</option>
+          <option value="72">3 hari</option>
+          <option value="168">7 hari</option>
+        </select>
+      </div>
+      <div class="chart-box"><canvas id="chart-trend"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="chart-head">
+        <h2>Distribusi Kualitas</h2>
+      </div>
+      <div class="chart-box"><canvas id="chart-dist"></canvas></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+</html>
